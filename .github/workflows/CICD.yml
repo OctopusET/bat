@@ -174,6 +174,8 @@ jobs:
           - { target: aarch64-pc-windows-msvc     , os: windows-11-arm,                                            }
           - { target: x86_64-unknown-linux-gnu    , os: ubuntu-latest, dpkg_arch: amd64,            use-cross: true }
           - { target: x86_64-unknown-linux-musl   , os: ubuntu-latest, dpkg_arch: musl-linux-amd64, use-cross: true }
+          - { target: riscv64gc-unknown-linux-gnu , os: ubuntu-latest, dpkg_arch: riscv64,            use-cross: true }
+          - { target: riscv64gc-unknown-linux-musl, os: ubuntu-latest, dpkg_arch: musl-linux-riscv64, use-cross: true }
     env:
       BUILD_CMD: cargo
     steps:
@@ -186,6 +188,7 @@ jobs:
         case ${{ matrix.job.target }} in
           arm-unknown-linux-*) sudo apt-get -y update ; sudo apt-get -y install gcc-arm-linux-gnueabihf ;;
           aarch64-unknown-linux-gnu) sudo apt-get -y update ; sudo apt-get -y install gcc-aarch64-linux-gnu ;;
+          riscv64gc-unknown-linux-*) sudo apt-get -y update ; sudo apt-get -y install gcc-riscv64-linux-gnu ;;
         esac
 
     - name: Install Rust toolchain
