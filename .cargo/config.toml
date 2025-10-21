@@ -1,0 +1,38 @@
+# Cross-compilation linker configuration for all targets in CICD.yml
+
+# ARM targets
+[target.arm-unknown-linux-gnueabihf]
+linker = "arm-linux-gnueabihf-gcc"
+
+[target.arm-unknown-linux-musleabihf]
+linker = "arm-linux-musleabihf-gcc"
+
+# AArch64 targets
+[target.aarch64-unknown-linux-gnu]
+linker = "aarch64-linux-gnu-gcc"
+
+[target.aarch64-unknown-linux-musl]
+linker = "aarch64-linux-gnu-gcc"
+
+# i686 targets
+[target.i686-unknown-linux-gnu]
+linker = "i686-linux-gnu-gcc"
+
+[target.i686-unknown-linux-musl]
+linker = "i686-linux-gnu-gcc"
+
+# x86_64 targets
+[target.x86_64-unknown-linux-gnu]
+linker = "x86_64-linux-gnu-gcc"
+
+[target.x86_64-unknown-linux-musl]
+linker = "x86_64-linux-gnu-gcc"
+
+# RISC-V 64-bit targets
+[target.riscv64gc-unknown-linux-gnu]
+linker = "riscv64-linux-gnu-gcc"
+
+[target.riscv64gc-unknown-linux-musl]
+linker = "riscv64-linux-gnu-gcc"
+
+# No default target - use --target flag or host default
