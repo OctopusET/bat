@@ -34,5 +34,6 @@ linker = "riscv64-linux-gnu-gcc"
 
 [target.riscv64gc-unknown-linux-musl]
 linker = "riscv64-linux-gnu-gcc"
+rustflags = ["-C", "link-arg=-lm"]
 
 # No default target - use --target flag or host default
